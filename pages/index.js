@@ -1,33 +1,31 @@
-import { useState } from "react"; // Only import useState from React
-// React import is implicit in newer versions of React, but you can still import it if needed (for JSX transformation).
+import { useState } from "react";
+import weather from './images/weather.jpg';
 
 export default function Home() {
   const [color, setColor, count, setCount] = useState("");
   
   return (
-    <div className={`flex space-x-4 w-full h-screen bg-${color}-800`}>
-      <p>
-        Change color:
-      </p>
-      <button className="border bg-red-800 w-24 h-24"
-      onClick={() => {
-        setColor("red");
-      }}
-      ></button>
-      <button className="border bg-blue-800 w-24 h-24"
-      onClick={() => {
-        setColor("blue");
-      }}
-      ></button>
-      <button className="border bg-green-800 w-24 h-24"
-      onClick={() => {
-        setColor("green");
-      }}
-      ></button>
-      <button className="bg-white w-16 h-8"
-      onClick={() => {
-        setCount
-        }}>Add one</button>
+    <div className="bg-black w-screen h-screen flex justify-around items-center relative">
+        <div className="bg-white w-56 h-32 border rounded-xl">
+          <a href="http://localhost:3000/weather">
+            <img src={weather} alt="weather"/>
+          </a>
+        </div>
+        <div className="bg-white w-56 h-32 border rounded-xl">
+          <a href="http://127.0.0.1:5500/pages/justhtml.html">
+            <img src={weather} alt="info"/>
+          </a>
+        </div>
+        <div className="bg-white w-56 h-32 border rounded-xl">
+          <a href="http://localhost:3000/grid">
+            <img src={weather} alt="grid"/>
+          </a>
+        </div>
+        <div className="bg-white w-56 h-32 border rounded-xl">
+          <a href="http://localhost:3000/search">
+            <img src={weather} alt="search"/>
+          </a>
+        </div>
     </div>
   );
 }
