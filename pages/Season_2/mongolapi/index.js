@@ -55,6 +55,12 @@ export default function Lab2() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <button
+        onClick={() => router.back()}
+        className="p-2 mb-4 w-20 bg-[#CFAF48] text-white rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 absolute top-5 left-5"
+      >
+        Back
+      </button>
     {loading && (
       <div className="flex justify-center items-center w-full h-full">
         <div className="animate-spin rounded-full border-t-4 border-b-4 border-[#CFAF48] w-16 h-16"></div>

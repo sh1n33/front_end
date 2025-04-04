@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from 'next/router';
 
 const SearchComponent = () => {
   const data = [
@@ -29,9 +30,20 @@ const SearchComponent = () => {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const router = useRouter(); // Add router hook
+
   return (
     <div className="p-4 bg-black text-white min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Search Names</h1>
+
+      {/* Back Button */}
+      <button
+        onClick={() => router.back()}
+        className="bg-gray-600 text-white py-2 px-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out mb-4"
+      >
+        Back
+      </button>
+    <div className="w-20"></div>
       <button
         className="px-4 py-2 bg-blue-500 text-white rounded mb-4"
         onClick={() => setView(view === "list" ? "grid" : "list")}
